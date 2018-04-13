@@ -29,4 +29,28 @@ class TestClass2 extends React.Component {
     }
 }
 
-ReactDOM.render(<TestClass2 name="Noname"/>, document.getElementById('root'));
+class TestClass3 extends React.PureComponent {
+    render () {
+        return (
+            <div className="container">
+                <h1>Hello, {this.props.name}</h1>
+            </div>
+        );
+    }
+}
+
+// ReactDOM.render(<TestClass2 name="Noname"/>, document.getElementById('reactComponentTest'));
+
+function App() { // functional one
+    return (
+        <div>
+            <TestClass2 name="Component"/>
+            <TestClass3 name="Pure Component"/>
+        </div>
+    );
+}
+
+ReactDOM.render(
+    <App />,
+    document.getElementById('root')
+);
