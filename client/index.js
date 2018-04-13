@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(
-    <h1>Hello, world!</h1>,
-    document.getElementById('root')
-);
+// ReactDOM.render(
+//     <h1>Hello, world!</h1>,
+//     document.getElementById('root')
+// );
 
 // class TestClass1 extends React.Component {
 //     render () {
@@ -20,17 +20,28 @@ ReactDOM.render(
 // ReactDOM.render(React.createElement(TestClass1, null), document.getElementById('root'));
 
 class TestClass2 extends React.Component {
-    render () {
+    constructor() {
+        super();
+        this.state = { greeting: 'empty' };
+    }
+
+    componentDidMount() {
+        fetch('/greeting')
+            .then(res => res.json())
+            .then(greeting => this.setState(greeting));
+    }
+
+    render() {
         return (
-           <div className="container">
-               <h1>Hello, {this.props.name}</h1>
-           </div>
+            <div className="container">
+                <h1>{this.state.greeting}</h1>
+            </div>
         );
     }
 }
 
 class TestClass3 extends React.PureComponent {
-    render () {
+    render() {
         return (
             <div className="container">
                 <h1>Hello, {this.props.name}</h1>
@@ -44,8 +55,8 @@ class TestClass3 extends React.PureComponent {
 function App() { // functional one
     return (
         <div>
-            <TestClass2 name="Component"/>
-            <TestClass3 name="Pure Component"/>
+            <TestClass2 name="Component" />
+            <TestClass3 name="Pure Component" />
         </div>
     );
 }
