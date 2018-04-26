@@ -2,6 +2,9 @@
 
 **Launching** 
   - `npm install` at client & server folders
-  - client: `npm run bundle` `npm run serve` 
-  - server: `npm run start`
+  - run node server: `npm run start`
+  - run dev server: `npm run serve:dev` 
+  - build prod bundle: `npm run build:prod`
+  - run tests: `npm run test` 
+
   - open http://localhost:3002/
