@@ -1,10 +1,12 @@
 const path = require('path');
 
 module.exports = {
-    mode: "development", // "production" | "development" | "none"
-    // Chosen mode tells webpack to use its built-in optimizations accordingly.
-    entry: {
-        main: './src/index.js'
+    entry: './src/index.js',
+    devtool: 'inline-source-map',
+    devServer: {
+       proxy: {
+           "/greeting": "http://localhost:3001"
+       }
     },
     output: {
         path: path.resolve(__dirname, 'dist'),
@@ -21,7 +23,26 @@ module.exports = {
                         presets: ['env']
                     }
                 }
-            }
+            },
+            // {
+            //     test: /\.css$/,
+            //     use: [
+            //         'style-loader',
+            //         'css-loader'
+            //     ]
+            // },
+            // {
+            //     test: /\.(png|svg|jpg|gif)$/,
+            //     use: [
+            //         'file-loader'
+            //     ]
+            // },
+            // {
+            //     test: /\.(woff|woff2|eot|ttf|otf)$/,
+            //     use: [
+            //         'file-loader'
+            //     ]
+            // }
         ]
     }
 };

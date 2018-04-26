@@ -1,5 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+// import './style.css';
+import sum from './testFunc.js';
+
+console.log(sum(3, 4));
 
 // ReactDOM.render(
 //     <h1>Hello, world!</h1>,
