@@ -5,8 +5,9 @@
   "private": true,
   "scripts": {
     "test": "jest",
-    "serve:dev": "webpack-dev-server --port 3002 --config webpack.dev.js",
-    "build:prod": "webpack --config webpack.prod.js"
+    "build:prod": "webpack --config webpack.prod.js",
+    "build:dev": "webpack --config webpack.dev.js",
+    "serve:dev": "webpack-dev-server --port 3002 --config webpack.dev.js --colors --hot"
   },
   "author": "",
   "license": "ISC",
