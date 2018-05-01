@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import List from '../List/List';
 
 export default class App extends Component {
@@ -18,7 +19,6 @@ export default class App extends Component {
             })
             .then(response => {
                 if (response && response.data) {
-                    console.log('hello!');
                     return this.setState({ results: response.data });
                 }
             });
@@ -26,13 +26,13 @@ export default class App extends Component {
 
     render() {
         return (
-            <div>
+            <ErrorBoundary>
                 <form className="App" onSubmit={this.onSubmit}>
                     <input value={this.state.searchQuery} />
                     <button>Search</button>
                 </form>
                 <List movies={this.state.results} />
-            </div>
+            </ErrorBoundary>
         );
     }
 }

@@ -1,7 +1,35 @@
-.card {
-    
+.card-wrapper {
+    width: 33%;
+    list-style: none;
 }
 
-.card-poster {
-    object-fit: contain;
+.card {
+    padding: 10px;
+}
+
+.card-inlineInfo {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.card-title {
+    text-transform: uppercase;
+    font-weight: 600;
+}
+
+.card-releaseYear {
+    border: 1px solid grey;
+    font-size: 13px;
+    padding: 2px;
+}
+
+.card-posterImage {
+    width: 100%;
+    padding-bottom: 10px
+}
+
+.card-genre {
+    color: grey;
+    font-size: 13px;
 }
