@@ -1,0 +1,7 @@
+.list-container {
+    display: flex;
+}
+
+.card-wrapper {
+    width: 33%;
+}

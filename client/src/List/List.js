@@ -1,11 +1,12 @@
 import React from 'react';
-/* add CARD component */
+import Card from '../Card/Card';
+import './list.css';
 
 const List = ({ movies }) => (
-    <ul>
-        <h4>Results</h4>
+    <h4>Results</h4>
+    <ul class="list-container">
         {
-            movies && movies.map((movie, index) => <li key={index}>  <span>{movie.title}</span><br></br><mark>{movie.tagline}</mark>  </li>)
+            movies && movies.map((movie, index) => <li class="card-wrapper" key={index}>  <Card movie={movie} />  </li>)
         }
     </ul>
 );

@@ -18,6 +18,7 @@ export default class App extends Component {
             })
             .then(response => {
                 if (response && response.data) {
+                    console.log('hello!');
                     return this.setState({ results: response.data });
                 }
             });

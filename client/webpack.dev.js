@@ -14,5 +14,6 @@ module.exports = merge(common, {
             'process.env.NODE_ENV': JSON.stringify('development')
         })
     ],
+    watch: true,
     mode: 'development'
 });
