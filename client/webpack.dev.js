@@ -4,16 +4,21 @@ const common = require('./webpack.common.js');
 
 module.exports = merge(common, {
     devtool: 'inline-source-map',
-    devServer: {
-        proxy: {
-            /* "/greeting": "http://localhost:3001" */
-        }
-    },
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('development')
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     watch: true,
-    mode: 'development'
+    mode: 'development',
+    node: {
+        console: false,
+        global: true,
+        process: true,
+        __filename: false,
+        __dirname: false,
+        Buffer: true,
+        setImmediate: true
+    }
 });

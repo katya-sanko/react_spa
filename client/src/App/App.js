@@ -13,7 +13,7 @@ export default class App extends Component {
     }
 
     componentDidMount() {
-        fetch('http://react-cdp-api.herokuapp.com/movies?search=ghost%20in%20the%20shell&searchBy=title') /* TODO: add encoding of search string */
+        fetch('http://react-cdp-api.herokuapp.com/movies')
             .then(res => {
                 return res.json();
             })

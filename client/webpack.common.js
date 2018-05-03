@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: ['./src/index.js', 'webpack-hot-middleware/client'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -11,12 +11,9 @@ module.exports = {
         rules: [
             {
                 test: /\.js$/,
-                exclude: /(node_modules|bower_components)/,
+                exclude: /(node_modules)/,
                 use: {
-                    loader: 'babel-loader',
-                    options: {
-                        presets: ['env']
-                    }
+                    loader: 'babel-loader'
                 }
             },
             {
@@ -25,19 +22,7 @@ module.exports = {
                     'style-loader',
                     'css-loader'
                 ]
-            },
-            // {
-            //     test: /\.(png|svg|jpg|gif)$/,
-            //     use: [
-            //         'file-loader'
-            //     ]
-            // },
-            // {
-            //     test: /\.(woff|woff2|eot|ttf|otf)$/,
-            //     use: [
-            //         'file-loader'
-            //     ]
-            // }
+            }
         ]
     }
 };
