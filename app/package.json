@@ -12,6 +12,24 @@
   },
   "author": "",
   "license": "ISC",
+  "jest": {
+    "setupTestFrameworkScriptFile": "<rootDir>/jestConfig.js",
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,jsx}",
+      "!**/node_modules/**",
+      "!**/dist/**"
+    ],
+    "coveragePathIgnorePatterns": [
+      "<rootDir>/dist/",
+      "<rootDir>/node_modules/"
+    ],
+    "coverageDirectory": "<rootDir>/coverage",
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+      "\\.(css|less)$": "identity-obj-proxy"
+    }
+  },
   "dependencies": {
     "babel-preset-env": "1.6.1",
     "babel-preset-react": "6.24.1",
@@ -23,11 +41,16 @@
   },
   "devDependencies": {
     "babel-core": "6.26.0",
+    "babel-jest": "^22.4.3",
     "babel-loader": "7.1.4",
     "css-loader": "^0.28.11",
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
     "express": "^4.16.3",
     "file-loader": "^1.1.11",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^22.4.3",
+    "react-test-renderer": "^16.3.2",
     "style-loader": "^0.21.0",
     "uglifyjs-webpack-plugin": "^1.2.5",
     "webpack": "4.5.0",
