@@ -29,7 +29,6 @@ export default class Search extends Component {
     }
 
     onSubmit() {
-        console.log(this);
         getMovies(this.state.searchString, this.state.searchParam).then(response => {
             if (response && response.data) {
                 return this.props.resultsHandler(response.data);
@@ -61,7 +60,7 @@ export default class Search extends Component {
                     <label htmlFor="param2">Genre</label>
                 </section>
 
-                <button className="btn" onClick={this.onSubmit}>Search</button>
+                <button className="btn" id="search" onClick={this.onSubmit}>Search</button>
             </div>
         );
     }
