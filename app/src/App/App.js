@@ -1,36 +1,30 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
+import Search from '../Search/Search';
 import List from '../List/List';
 
 export default class App extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchQuery: 'Ghost in the Shell',
             results: []
         };
+
+        this.resultsHandler = this.resultsHandler.bind(this);
     }
 
-    componentDidMount() {
-        fetch('http://react-cdp-api.herokuapp.com/movies')
-            .then(res => {
-                return res.json();
-            })
-            .then(response => {
-                if (response && response.data) {
-                    return this.setState({ results: response.data });
-                }
-            });
+
+    resultsHandler(value) {
+        this.setState({
+            results: value
+        });
     }
 
     render() {
         return (
             <ErrorBoundary>
-                <form className="App" onSubmit={this.onSubmit}>
-                    <input value={this.state.searchQuery} />
-                    <button>Search</button>
-                </form>
+                <Search resultsHandler={this.resultsHandler} />
                 <List movies={this.state.results} />
             </ErrorBoundary>
         );

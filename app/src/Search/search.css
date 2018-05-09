@@ -1,0 +1,28 @@
+input[type=radio] {
+  visibility: hidden;
+}
+
+input[type=radio]+label {
+  background: #ccc;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  margin: 5px;
+  display: inline-block;
+}
+
+input[type=radio]+label:hover {
+  cursor: pointer;
+}
+
+input[type=radio]:checked+label {
+  background: #F65063;
+}
+
+.btn {
+  background: #F65063;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  margin: 5px;
+  display: inline-block;
+  border: 1px solid transparent;
+}
