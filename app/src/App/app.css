@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.btn {
+    background: #F65063;
+    text-transform: uppercase;
+    padding: 5px 8px;
+    margin: 5px;
+    display: inline-block;
+    border: 1px solid transparent;
+}
+
+.txt {
+    color: #F65063;
+    font-weight: 700;
+}
+
+.hdr {
+    text-transform: uppercase;
+    color: #F1F2F1;
+    padding: 20px 0 0 0;
+    font-weight: 700;
+}

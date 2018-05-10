@@ -15,7 +15,7 @@ export default class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            searchString: 'Kill Bill',
+            searchString: 'avengers',
             searchParam: 'title'
         };
 
@@ -50,17 +50,24 @@ export default class Search extends Component {
 
     render() {
         return (
-            <div className="Search">
-                <input value={this.state.searchString} onChange={this.onInputChange} />
+            <div className="search-wrapper">
+                <div className="search-container">
+                    <span className="txt">netflixroulette</span>
+                    <h3 className="hdr">Find your movie</h3>
+                    <input className="search-input" value={this.state.searchString} onChange={this.onInputChange} />
 
-                <section className="search-radioGroup">
-                    <input type="radio" id="param1" name="params" value="title" checked={this.state.searchParam === 'title'} onChange={this.onOptionChange} />
-                    <label htmlFor="param1">Title</label>
-                    <input type="radio" id="param2" name="params" value="genre" checked={this.state.searchParam === 'genre'} onChange={this.onOptionChange} />
-                    <label htmlFor="param2">Genre</label>
-                </section>
+                    <section className="search-controls">
+                        <span className="hdr">Search by</span>
+                        <div className="search-radioGroup">
+                            <input type="radio" id="param1" name="params" value="title" checked={this.state.searchParam === 'title'} onChange={this.onOptionChange} />
+                            <label htmlFor="param1"><span className="hdr">Title</span></label>
+                            <input type="radio" id="param2" name="params" value="genre" checked={this.state.searchParam === 'genre'} onChange={this.onOptionChange} />
+                            <label htmlFor="param2"><span className="hdr">Genre</span></label>
+                        </div>
 
-                <button className="btn" id="search" onClick={this.onSubmit}>Search</button>
+                        <button className="btn search-button" id="search" onClick={this.onSubmit}><span className="hdr">Search</span></button>
+                    </section>
+                </div>
             </div>
         );
     }

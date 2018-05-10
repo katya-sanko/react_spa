@@ -4,7 +4,7 @@ import './list.css';
 
 const List = ({ movies }) => (
     <div className="list-wrapper">
-        <h4>Results</h4>
+        { !movies.length && <span>No films found</span> }
         <ul className="list-container">
             {
                 movies && movies.map((movie, index) => <li className="card-wrapper" key={index}>  <Card movie={movie} />  </li>)

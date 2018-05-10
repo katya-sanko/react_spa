@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import ErrorBoundary from '../ErrorBoundary/ErrorBoundary';
 import Search from '../Search/Search';
 import List from '../List/List';
+import './app.css';
 
 export default class App extends Component {
     constructor(props) {
