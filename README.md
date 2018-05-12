@@ -1,7 +1,7 @@
 # react_spa
 
 **Launching** 
-  - `npm install` at app folder 
+  - `npm install`
 
   - build prod: `npm run build:prod`
 
