@@ -1,13 +1,11 @@
 import { configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
-import fetchPolyfill from 'jest-fetch-mock';
-//import whatwgFetch from 'whatwg-fetch-importable'
+import { Body, Headers, Request, Response, fetch } from './polyfills/fetch.js';
 
-global.fetch = fetchPolyfill;
-
-
-console.log('fetchMock', global.fetch);
-
-// global.fetch = whatwgFetch;
+global.Body = Body;
+global.Headers = Headers;
+global.Request = Request;
+global.Response = Response;
+global.fetch = fetch;
 
 configure({ adapter: new Adapter() });
