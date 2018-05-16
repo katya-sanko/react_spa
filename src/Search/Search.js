@@ -1,17 +1,11 @@
 import React, { Component } from 'react';
 import ReactDOM from 'react-dom';
+
+import { connect } from 'react-redux';
+import { moviesFetchData } from '../actions/movies';
+
 import './search.css';
-
-function getMovies(query, param) {
-    let url = `http://react-cdp-api.herokuapp.com/movies?search=${encodeURI(query)}&searchBy=${param}`;
-
-    return fetch(url)
-        .then(res => {
-            return res.json();
-        });
-}
-
-export default class Search extends Component {
+class Search extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -29,11 +23,7 @@ export default class Search extends Component {
     }
 
     onSubmit() {
-        getMovies(this.state.searchString, this.state.searchParam).then(response => {
-            if (response && response.data) {
-                return this.props.resultsHandler(response.data);
-            }
-        });
+        this.props.fetchData(this.state.searchString, this.state.searchParam);
     }
 
     onOptionChange(event) {
@@ -72,3 +62,19 @@ export default class Search extends Component {
         );
     }
 }
+
+const mapStateToProps = (state) => {
+    return {
+        movies: state.movies,
+        hasErrored: state.moviesHasErrored,
+        isLoading: state.moviesIsLoading
+    };
+};
+
+const mapDispatchToProps = (dispatch) => {
+    return {
+        fetchData: (query, param) => dispatch(moviesFetchData(query, param))
+    };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Search);

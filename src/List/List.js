@@ -7,26 +7,35 @@ class List extends Component {
         super(props);
 
         this.state = {
-            movies: this.props.movies,
+            movies: [],
             hasErrored: false,
             isLoading: false
         };
-    }
 
-    static getDerivedStateFromProps(nextProps, prevState) {
-        return {
-            movies: nextProps.movies,
-            hasErrored: !nextProps.movies.length,
-        };
+        this.props.store.subscribe(() => {
+            // When state will be updated(in our case, when items will be fetched), 
+            // we will update local component state and force component to rerender 
+            // with new data.
+
+            this.setState({
+                movies: this.props.store.getState().movies,
+                hasErrored: this.props.store.getState().hasErrored,
+                isLoading: this.props.store.getState().isLoading
+            });
+        });
     }
 
     render() {
         if (this.state.hasErrored) {
-            return <span>No films found</span>
+            return <span>Something went wrong...</span>
         }
 
         if (this.state.isLoading) {
             return <p>Loading…</p>;
+        }
+
+        if (this.state.movies && !this.state.movies.length) {
+            return <p>No films found</p>;
         }
 
         return (
