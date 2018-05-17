@@ -27,3 +27,23 @@ export function movies(state = [], action) {
             return state;
     }
 }
+
+export function sortBy(state = 'vote_average', action) {
+    switch (action.type) {
+        case 'SORT_BY_PARAM':
+            return action.sortByParam;
+
+        default:
+            return state;
+    }
+}
+
+export function filterBy(state = 'title', action) {
+    switch (action.type) {
+        case 'FILTER_BY_PARAM':
+            return action.filterByParam;
+
+        default:
+            return state;
+    }
+}

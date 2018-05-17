@@ -43,7 +43,7 @@ input[type=radio] {
   visibility: hidden;
 }
 
-input[type=radio]+label {
+.radioItems--bgColorful+label {
   background: #ccc;
   text-transform: uppercase;
   padding: 5px 8px;
@@ -52,10 +52,43 @@ input[type=radio]+label {
   display: inline-block;
 }
 
-input[type=radio]+label:hover {
+.radioItems--bgColorful+label:hover {
   cursor: pointer;
 }
 
-input[type=radio]:checked+label {
+.radioItems--bgColorful:checked+label {
   background: #F65063;
+}
+
+.radioItems--bgTransparent+label {
+  display: inline-block;
+  background: transparent;
+  padding: 5px 8px;
+  margin: 5px;
+}
+
+.radioItems--bgTransparent+label:hover {
+  cursor: pointer;
+}
+
+.radioItems--bgTransparent:checked+label {
+  color: #F65063;
+}
+
+.sort-radioGroupWrapper {
+  background: #F5F5F5;
+  padding: 10px 0;
+}
+
+.sort-radioGroupInner {
+  display: flex;
+  width: 90%;
+  margin: 0 auto;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.sort-results {
+  align-self: center;
 }
