@@ -1,0 +1,33 @@
+.errorPage {
+    display: flex;
+    width: 100vw;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABBJREFUCB1jYGBgqAdiBAAABwQAgIiOZY4AAAAASUVORK5CYII=');
+}
+
+.errorPage-content {
+    color: #fff;
+    background: rgba(0, 0, 0, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    border-top: 2px solid #F65063;
+    height: 300px;
+}
+
+.errorPage-content404 {
+    font-size: 80px;
+}
+
+.errorPage-contentText {
+    color: #F65063;
+    padding: 10px 0;
+}
+
+.errorPage-contentLink {
+    color: #fff;
+}
