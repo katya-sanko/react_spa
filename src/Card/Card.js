@@ -1,5 +1,6 @@
 import React from 'react';
 import './card.css';
+import { Link } from 'react-router-dom';
 
 function getReleaseYear(dateString) {
     let releaseDate = new Date(dateString);
@@ -7,11 +8,15 @@ function getReleaseYear(dateString) {
     return releaseDate.getFullYear();
 }
 
+function getUniqLink(id) {
+    return `/movies/film/${id}`;
+}
+
 const Card = ({ movie }) => (
     <div className="card">
-        <div className="card-poster">
+        <Link to={getUniqLink(movie.id)} className="card-poster">
             <img className="card-posterImage" src={movie.poster_path} />
-        </div>
+        </Link>
         <div className="card-inlineInfo">
             <span className="card-title">{movie.title}</span>
             <span className="card-releaseYear">{getReleaseYear(movie.release_date)}</span>

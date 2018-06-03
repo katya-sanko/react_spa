@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 import './errorPage.css';
 
 const ErrorPage = () => (
@@ -6,7 +7,7 @@ const ErrorPage = () => (
         <div className='errorPage-content'>
             <span className='errorPage-content404'>4 0 4</span>
             <div className='errorPage-contentText'>THE PAGE WAS NOT FOUND</div>
-            <a className='btn errorPage-contentLink' href='/movies'>back to movies</a>
+            <Link className='btn errorPage-contentLink' to="/movies">back to movies list</Link>
         </div>
     </div>
 );
