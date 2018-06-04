@@ -27,3 +27,24 @@ export function movies(state = [], action) {
             return state;
     }
 }
+
+//
+export function movie(state = [], action) {
+    switch (action.type) {
+        case 'MOVIE_FETCH_DATA_SUCCESS':
+            return action.movie;
+
+        default:
+            return state;
+    }
+}
+
+export function movieHasErrored(state = false, action) {
+    switch (action.type) {
+        case 'MOVIE_HAS_ERRORED':
+            return action.hasErrored;
+
+        default:
+            return state;
+    }
+}

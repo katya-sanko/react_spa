@@ -1,8 +1,10 @@
 import { combineReducers } from 'redux';
-import { movies, moviesHasErrored, moviesIsLoading } from './movies';
+import { movies, moviesHasErrored, moviesIsLoading, movie, movieHasErrored } from './movies';
 
 export default combineReducers({
     movies,
     moviesHasErrored,
-    moviesIsLoading
+    moviesIsLoading,
+    movie,
+    movieHasErrored
 });

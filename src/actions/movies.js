@@ -35,6 +35,39 @@ export function moviesFetchData(query, param) {
                 return response.json();
             })
             .then((parsedResponse) => dispatch(moviesFetchDataSuccess(parsedResponse.data)))
-            .catch(() => dispatch(moviesHasErrored(true)));;
+            .catch(() => dispatch(moviesHasErrored(true)));
+    }
+}
+
+export function movieFetchDataSuccess(movie) {
+    return {
+        type: 'MOVIE_FETCH_DATA_SUCCESS',
+        movie
+    };
+}
+
+export function movieHasErrored(bool) {
+    return {
+        type: 'MOVIE_HAS_ERRORED',
+        hasErrored: bool
+    };
+}
+
+export function movieFetchDataById(id) {
+    let url = `http://react-cdp-api.herokuapp.com/movies/${id}`;
+
+    return (dispatch) => {
+        fetch(url)
+            .then(response => {
+                if (!response.ok) {
+                    throw Error(response.statusText);
+                }
+                return response.json();
+            })
+            .then((parsedResponse) => {
+                console.log(parsedResponse);
+                dispatch(movieFetchDataSuccess(parsedResponse));
+            })
+            .catch(() => dispatch(movieHasErrored(true)));
     }
 }
