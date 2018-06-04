@@ -44,7 +44,7 @@ class Search extends Component {
                 <div className="search-container">
                     <span className="txt">netflixroulette</span>
                     <h3 className="hdr">Find your movie</h3>
-                    <input className="search-input" value={this.state.searchString} onChange={this.onInputChange} />
+                    <input className="search-input" value={this.state.searchString} onChange={this.onInputChange} onKeyDown={this.onSubmit}/>
 
                     <section className="search-controls">
                         <span className="hdr">Search by</span>

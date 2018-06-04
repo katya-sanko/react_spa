@@ -360,7 +360,6 @@ Response.redirect = function (url, status) {
 }
 
 function fetch(input, init) {
-    // console.log('whatwgFetchWidthTimeout--->'+input, init);
     init = init || { timeout: 30000 };
     return new Promise(function (resolve, reject) {
         var request

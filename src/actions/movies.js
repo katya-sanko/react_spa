@@ -65,7 +65,6 @@ export function movieFetchDataById(id) {
                 return response.json();
             })
             .then((parsedResponse) => {
-                console.log(parsedResponse);
                 dispatch(movieFetchDataSuccess(parsedResponse));
             })
             .catch(() => dispatch(movieHasErrored(true)));
