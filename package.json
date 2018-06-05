@@ -4,10 +4,10 @@
   "description": "",
   "private": true,
   "scripts": {
-    "start": "node server.js",
+    "start": "cross-env NODE_ENV=development node server.js",
     "test": "jest",
-    "build:prod": "webpack --config webpack.prod.js",
-    "watch:dev": "webpack --config webpack.dev.js"
+    "build:prod": "cross-env NODE_ENV=production webpack --config webpack.prod.js",
+    "prod": "cross-env NODE_ENV=production node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -53,6 +53,7 @@
     "babel-core": "6.26.0",
     "babel-jest": "^22.4.3",
     "babel-loader": "7.1.4",
+    "cross-env": "5.1.6",
     "css-loader": "^0.28.11",
     "enzyme": "^3.3.0",
     "enzyme-adapter-react-16": "^1.1.1",

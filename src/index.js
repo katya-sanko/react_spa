@@ -10,10 +10,10 @@ const store = configureStore(); // initialState here could be set up here/ resto
 
 ReactDOM.render(
     <Provider store={store}>
-        <Router store={store}>
-            <Switch store={store}>
-                <Route path='/movies' store={store} render={(props) => (
-                    <App  {...props} store={store}  />
+        <Router>
+            <Switch>
+                <Route path='/movies'  render={(props) => (
+                    <App  {...props} />
                 )} />
                 <Route component={ErrorPage} />
             </Switch>

@@ -15,17 +15,17 @@ class App extends Component {
 
     render() {
         return (
-            <ErrorBoundary store={this.props.store} >
+            <ErrorBoundary  >
                 <Switch>
-                    <Route path='/movies' exact store={this.props.store} render={(props) => (
+                    <Route path='/movies' exact render={(props) => (
                         <div>
-                            <Search {...props} store={this.props.store} />
-                            <List {...props} store={this.props.store} />
+                            <Search {...props} />
+                            <List {...props} />
                         </div>
                     )} />
 
-                    <Route path='/movies/film/:id' exact store={this.props.store} render={(props) => (
-                        <Film {...props} store={this.props.store} />
+                    <Route path='/movies/film/:id' exact render={(props) => (
+                        <Film {...props} />
                     )} />
                 </Switch>
             </ErrorBoundary>

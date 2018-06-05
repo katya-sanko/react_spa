@@ -22,7 +22,6 @@ module.exports = merge(common, {
         ]
     },
     watch: true,
-    mode: 'development',
     node: {
         console: false,
         global: true,
