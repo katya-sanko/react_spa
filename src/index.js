@@ -12,9 +12,7 @@ ReactDOM.render(
     <Provider store={store}>
         <Router>
             <Switch>
-                <Route path='/movies'  render={(props) => (
-                    <App  {...props} />
-                )} />
+                <Route path='/movies'  component={App}/>
                 <Route component={ErrorPage} />
             </Switch>
         </Router>
