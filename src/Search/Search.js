@@ -13,6 +13,7 @@ class Search extends Component {
             searchParam: 'title'
         };
 
+        this.onEnter = this.onEnter.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
         this.onOptionChange = this.onOptionChange.bind(this);
         this.onInputChange = this.onInputChange.bind(this);
@@ -24,6 +25,12 @@ class Search extends Component {
 
     onSubmit() {
         this.props.fetchData(this.state.searchString, this.state.searchParam);
+    }
+
+    onEnter(event) {
+        if (event && event.keyCode === 13) {
+            this.onSubmit();
+        }
     }
 
     onOptionChange(event) {
@@ -44,7 +51,7 @@ class Search extends Component {
                 <div className="search-container">
                     <span className="txt">netflixroulette</span>
                     <h3 className="hdr">Find your movie</h3>
-                    <input className="search-input" value={this.state.searchString} onChange={this.onInputChange} onKeyDown={this.onSubmit}/>
+                    <input className="search-input" value={this.state.searchString} onChange={this.onInputChange} onKeyDown={this.onEnter}/>
 
                     <section className="search-controls">
                         <span className="hdr">Search by</span>

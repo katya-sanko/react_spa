@@ -1,12 +1,7 @@
 import React from 'react';
 import './card.css';
 import { Link } from 'react-router-dom';
-
-function getReleaseYear(dateString) {
-    let releaseDate = new Date(dateString);
-
-    return releaseDate.getFullYear();
-}
+import { getReleaseYear } from '../helpers.js';
 
 function getUniqLink(id) {
     return `/movies/film/${id}`;
