@@ -1,0 +1,125 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="list-wrapper"
+>
+  <ul
+    className="list-container"
+  >
+    <li
+      className="card-wrapper"
+    >
+        
+      <div
+        className="card"
+      >
+        <div
+          className="card-poster"
+        >
+          <img
+            className="card-posterImage"
+            src="https://image.tmdb.org/t/p/w500/aMETsaNNcDc6g5ZatQtVbySnSaA.jpg"
+          />
+        </div>
+        <div
+          className="card-inlineInfo"
+        >
+          <span
+            className="card-title"
+          >
+            Untitled Avengers
+          </span>
+          <span
+            className="card-releaseYear"
+          >
+            2019
+          </span>
+        </div>
+        <span
+          className="card-genre"
+        >
+           
+          Action
+            
+        </span>
+        <span
+          className="card-genre"
+        >
+           
+          Adventure
+            
+        </span>
+        <span
+          className="card-genre"
+        >
+           
+          Science Fiction
+            
+        </span>
+      </div>
+        
+    </li>
+    <li
+      className="card-wrapper"
+    >
+        
+      <div
+        className="card"
+      >
+        <div
+          className="card-poster"
+        >
+          <img
+            className="card-posterImage"
+            src="https://image.tmdb.org/t/p/w500/7WsyChQLEftFiDOVTGkv3hFpyyt.jpg"
+          />
+        </div>
+        <div
+          className="card-inlineInfo"
+        >
+          <span
+            className="card-title"
+          >
+            Avengers: Infinity War
+          </span>
+          <span
+            className="card-releaseYear"
+          >
+            2018
+          </span>
+        </div>
+        <span
+          className="card-genre"
+        >
+           
+          Adventure
+            
+        </span>
+        <span
+          className="card-genre"
+        >
+           
+          Science Fiction
+            
+        </span>
+        <span
+          className="card-genre"
+        >
+           
+          Fantasy
+            
+        </span>
+        <span
+          className="card-genre"
+        >
+           
+          Action
+            
+        </span>
+      </div>
+        
+    </li>
+  </ul>
+</div>
+`;
