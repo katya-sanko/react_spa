@@ -1,13 +1,12 @@
 # react_spa
 
 **Launching** 
-  - `npm install` at client 
-  - build prod: `npm run build:prod`
-  - build dev & watch: `npm run build:dev` 
-  - run dev server: `npm run serve:dev`
-  - run tests: `npm run test` 
+  - `npm install`
 
+  - build prod: `npm run build:prod`
+
+  - build dev & watch: `npm run build:dev` 
+  - run static express server: `npm run start` // so 2 consoles are running at the same time =(
   - open http://localhost:3002/
 
-// server folder for now is disabled
-  
+  - run tests: `npm run test` // coverage would be written into console & coverage folder 

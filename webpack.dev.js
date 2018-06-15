@@ -10,6 +10,17 @@ module.exports = merge(common, {
         }),
         new webpack.HotModuleReplacementPlugin()
     ],
+    module: {
+        rules: [
+            {
+                test: /\.css$/,
+                use: [
+                    'style-loader',
+                    'css-loader'
+                ]
+            }
+        ]
+    },
     watch: true,
     mode: 'development',
     node: {

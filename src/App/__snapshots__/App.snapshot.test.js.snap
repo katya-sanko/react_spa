@@ -1,0 +1,97 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+Array [
+  <div
+    className="search-wrapper"
+  >
+    <div
+      className="search-container"
+    >
+      <span
+        className="txt"
+      >
+        netflixroulette
+      </span>
+      <h3
+        className="hdr"
+      >
+        Find your movie
+      </h3>
+      <input
+        className="search-input"
+        onChange={[Function]}
+        value="avengers"
+      />
+      <section
+        className="search-controls"
+      >
+        <span
+          className="hdr"
+        >
+          Search by
+        </span>
+        <div
+          className="search-radioGroup"
+        >
+          <input
+            checked={true}
+            id="param1"
+            name="params"
+            onChange={[Function]}
+            type="radio"
+            value="title"
+          />
+          <label
+            htmlFor="param1"
+          >
+            <span
+              className="hdr"
+            >
+              Title
+            </span>
+          </label>
+          <input
+            checked={false}
+            id="param2"
+            name="params"
+            onChange={[Function]}
+            type="radio"
+            value="genre"
+          />
+          <label
+            htmlFor="param2"
+          >
+            <span
+              className="hdr"
+            >
+              Genre
+            </span>
+          </label>
+        </div>
+        <button
+          className="btn search-button"
+          id="search"
+          onClick={[Function]}
+        >
+          <span
+            className="hdr"
+          >
+            Search
+          </span>
+        </button>
+      </section>
+    </div>
+  </div>,
+  <div
+    className="list-wrapper"
+  >
+    <span>
+      No films found
+    </span>
+    <ul
+      className="list-container"
+    />
+  </div>,
+]
+`;

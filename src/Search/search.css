@@ -1,0 +1,61 @@
+.search-wrapper {
+  background: url('Netflix-background.jpg');
+}
+
+.search-container {
+  display: flex;
+  flex-direction: column;
+  width: 90%;
+  min-height: 200px;
+  margin: 0 auto;
+  padding: 20px 0;
+  background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAAXNSR0IArs4c6QAAABBJREFUCB1jYGBgqAdiBAAABwQAgIiOZY4AAAAASUVORK5CYII=');
+}
+
+.search-controls {
+  display: flex;
+}
+
+.search-radioGroup {
+  display: flex;
+  align-items: flex-end;
+  flex-grow: 1;
+}
+
+.btn.search-button {
+  font-size: 15px;
+  font-weight: bold;
+  padding: 10px 48px;
+  margin: 0;
+}
+
+.search-input {
+  border: none;
+  border-bottom: 2px solid #F65063;
+  background: rgba(0, 0, 0, 0.7);
+  color: #F1F2F1;
+  padding: 10px;
+  margin: 15px 0;
+  font-size: 15px;
+}
+
+input[type=radio] {
+  visibility: hidden;
+}
+
+input[type=radio]+label {
+  background: #ccc;
+  text-transform: uppercase;
+  padding: 5px 8px;
+  margin: 5px;
+  font-size: 12px;
+  display: inline-block;
+}
+
+input[type=radio]+label:hover {
+  cursor: pointer;
+}
+
+input[type=radio]:checked+label {
+  background: #F65063;
+}

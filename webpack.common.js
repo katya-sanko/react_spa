@@ -2,7 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 module.exports = {
-    entry: ['./src/index.js', 'webpack-hot-middleware/client'],
+    entry: ['./src/index.js'],
     output: {
         path: path.resolve(__dirname, 'dist'),
         filename: 'bundle.js'
@@ -17,10 +17,12 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
+                test: /\.(png|jpg|gif)$/,
                 use: [
-                    'style-loader',
-                    'css-loader'
+                    {
+                        loader: 'file-loader',
+                        options: {}
+                    }
                 ]
             }
         ]
